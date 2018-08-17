@@ -24,7 +24,7 @@ sha256 = hashlib.sha256()
 sha256.update(data.encode('utf-8'))
 signature = sha256.hexdigest()
 params = {'appid': appid, 'time': str(curtime), 'random': num, 'sig': signature}
-res=requests.get("https://qaxxxrenewserver.bitbitduo.com/api/apiToken",params=params)
+res=requests.get("https://qaxxxrenewserver.bitbitduo.com/serv/apiToken",params=params)
 print res.text
 
 token = json.loads(res.text)['data']['apitoken']
